@@ -1,4 +1,4 @@
-baseurl = "https://www.example.org/"
+baseurl = "localhost:1313"
 title = "Quasicoherent"
 copyright = "Copyright &copy; 2019 - Kevin shu"
 canonifyurls = true
@@ -30,7 +30,7 @@ pygmentsCodeFences = true
     description = "A blog about math and code that sometimes makes sense."
     #images = [""] #This is used for opengraph/twitter cards.
     customCSS = []  #Optional Customised CSS
-    #favicon = ""
+    favicon = "sigma.ico"
     #utterancesRepo = "username/repository"
     #utterancesIssueTerm = "pathname"
     #homepageLength = 10
