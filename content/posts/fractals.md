@@ -1,9 +1,9 @@
 +++
 title = "Fractals"
 date = 2020-08-13T14:15:53-04:00
-images = ["/img/rainbow_curve.gif"]
+images = ["/img/fractal/rainbow_curve.gif"]
 tags = ["fractals", "geometry"]
-categories = ["category"]
+categories = ["Math"]
 draft = true
 +++
 
