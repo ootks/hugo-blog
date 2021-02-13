@@ -3,7 +3,7 @@ title = "Around The World in 180 Ways"
 date = 2020-08-16T11:35:57-04:00
 images = ["/img/AroundTheWorld/shortest_tour.png"]
 tags = []
-categories = ["Code"]
+categories = ["code"]
 draft = true
 +++
 *This is a technical write up about a project that I was thinking about related to going around all of the countries in the world in the best way possible. It describes some interesting mathematical models for how to determine which path is the best, and some code snippets for how to optimize these models. All of the models will turn out to be NP-hard technically, but they will be tractible in practice.*
