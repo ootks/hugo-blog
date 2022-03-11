@@ -1,0 +1,35 @@
+---
+title: "Hyperbolic Polynomials"
+date: 2020-08-13T15:26:31-04:00
+draft: true
+---
+We usually think of analysis and algebra as living in different walled villages, each happily ignoring the other.
+So, when we find something that seems to live in between these two fields, we ought to be excited.
+
+Hyperbolic polynomials are one of these things that somehow are `convex', which is something that mostly resides in the realm of analysis, yet we 
+Most people who learn about polynomials at some point learn about their roots.
+So we learn that if you have a polynomial in 1 variable, like $x^2 + 3x + 2$, 
+then the number of complex roots of this polynomial is the same as its degree,
+but it's surprisingly a lot harder to say anything about the real roots of a polynomial.
+
+For an arbitrary polynomial, there is a number associated with it called the
+discriminant. It is defined as
+\[
+\prod_{i < j} (r_i - r_j)
+\]
+where $r_i$ are the roots of the polynomial. Because this is a symmetric polynomial
+in the roots, this quantity can also be written as a polynomial in the coefficients
+of the original polynomial.
+
+
+For polynomials in degree 2, it looks like
+\[
+\Delta(ax^2+bx+c) = b^2-4ac
+\]
+For polynomials in degree 3, it looks like
+\[
+\Delta(ax^2+bx+c) = b^2-4ac
+\]
+
+And the discriminant gets a lot more complicated as the degree gets larger.
+

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<svg baseProfile="tiny" height="100%" version="1.2" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xlink="http://www.w3.org/1999/xlink"><defs />
+    <path class="SamplePath" d="M100,200 L100,300 A150,75 0 0,0 400,300 L400,200" />
+  <text fill="red" x="0" y="0.2">Test</text></svg>

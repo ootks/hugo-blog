@@ -1,0 +1,52 @@
+\documentclass[a4paper]{article}
+\usepackage[margin=.8in]{geometry}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{float}
+\usepackage{tikz}
+\usepackage{amsmath, amsthm, amsfonts, amssymb}
+
+\author{Kevin Shu}
+\title{Combinatorial Hodge Theory}
+
+\usepackage[parfill]{parskip}
+
+%Define theorem formatting
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{def}{Definition}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Hom}{\textbf{\text{Hom}}}
+\newcommand{\PP}{\textbf{P}}
+\newcommand{\SPACE}{\textbf{SPACE}}
+\newcommand{\NP}{\textbf{NP}}
+\newcommand{\SAT}{\textbf{SAT}}
+\newcommand{\pard}[2]{\frac{\partial #1}{\partial #2}}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\newcommand{\st}{{\text{ s.t. }}}
+
+\begin{document}
+\maketitle
+\begin{def}
+    A \textbf{fan}, $\Sigma$ is a collection of convex cones in $\R^n$ so that if $\sigma \in \Sigma$, and $\tau$ is a face of $\sigma$, then $\tau \in \Sigma$. Also, if $\tau, \sigma \in \Sigma$, then $\tau \cap \sigma$ must be a common face of both $\tau$ and $\sigma$. In some ways, this is like a projective version of a simplicial complex.
+\end{def}
+
+Let $\Sigma$ be a complete simplicial fan in $V$. $\mathcal{A}(\Sigma)$ is then the ring of conewise polynomial functions on $\Sigma$. 
+
+\textit{Aside} One way to think of a conewise polynomial function is that we assign a polynomial $p_{\sigma}$  on each cone $\sigma \in \Sigma$, so that if $\tau$ is a face of $\sigma$, then $p_{\sigma} |_{\tau} = p_{\tau}$, where $|_{\tau}$ denotes the restriction of $p$ to the subset $\tau$. Notice the Zariski closure of a cone is the affine subspace it spans. If we think of the fan whose maximal cones are the coordinate subspaces in $\R^2$, then an example of a conewise polynomial function would be given by 
+
+\begin{figure}[htpb]
+    \centering
+    \includegraphics[width=0.8\linewidth]{name.ext}
+    \caption{Name}%
+    \label{fig:name}
+\end{figure}
+
+\end{document}
