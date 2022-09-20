@@ -1,41 +1,42 @@
 +++
 title = "Surprising Positive Semidefiniteness"
-date = 2021-09-09T00:05:13-04:00
+date = 2022-09-20T00:05:13-04:00
 tags = ["math"]
 categories = []
 draft = false
 +++
 They say that in Euclidean geometry, the solutions to all problems start by drawing a line somewhere in the picture. I think that this is characteristic of my favorite kind of proof, where you can't just move forward in a linear fashion to get to an answer, but you actually have to add something new, that you might not have thought was related to the question.
 
-Here are two proofs that I only recently thought of as being related to each other. They are both about proving that a certain matrix is positive semidefinite (PSD), meaning that they have nonnegative eigenvalues, and we will prove them by finding that matrix inside a much larger PSD matrix.
+Here are two proofs that I only recently thought of as being related to each other (despite the fact that they are both named after Issai Schur). They are both about proving that a certain matrix is positive semidefinite (PSD), meaning that they have nonnegative eigenvalues, and we will prove them by finding that matrix inside a much larger PSD matrix.
 
 It is actually not too hard to show that if you take a principal submatrix of a PSD matrix, that will also be PSD. But we can make use of a slightly stronger theorem to strengthen our results.
 
 #### Theorem (Cauchy Interlacing Theorem)
 
-> Let $X$ be an $n \times n$ symmetric matrix, and let $Y$ be a $k\times k$ principal submatrix of $X$ (that is, we obtain $Y$ by deleting $n-k$ rows and their corresponding columns). Let $\lambda_i(\cdot)$ denote the $i^{th}$ smallest eigenvalue function. Then, for each $i = 1,\dots,k$,
+> Let $X$ be an $n \times n$ symmetric matrix, and let $Y$ be a $k\times k$ principal submatrix of $X$ (that is, we obtain $Y$ by deleting $n-k$ rows of $X$ and their corresponding columns). Let $\lambda_i(\cdot)$ denote the $i^{th}$ smallest eigenvalue function. Then, for each $i = 1,\dots,k$,
 $$
     \lambda_{i}(X) \le \lambda_i(Y) \le \lambda_{i+n-k}(X).
 $$
 
-
-Disclaimer: There are almost certainly better proofs of both of these results, but I think highlighting their similarities is interesting enough for us. It will also allow us to prove what I think is an unknown fact about Schur 
+Disclaimer: There are almost certainly better proofs of both of these results, but I think highlighting their similarities is interesting enough for us. It will also allow us to prove what I think is a previously unknown fact about Schur complements.
 
 # The Schur Product Theorem
 
-We all know how to multiply square matrices. If $X$ and $Y$ are two matrices, then each entry of $X \cdot Y$ is the product of the corresponding entries of $X$ and $Y$.
+We all know how to multiply square matrices. If $X$ and $Y$ are two matrices, then we just multiply them entriwise, so that each entry of $X \cdot Y$ is the product of the corresponding entries of $X$ and $Y$.
 
-This style of multiplication, called the Hadamard product, is sort of weird, but what is weirder is that it actually interacts well with linear algebraic forms of multiplication.
+This style of multiplication, called the Hadamard product, is sort of weird, but what is weirder is that it actually interacts well with linear algebra, which usually use a different kind of multiplication.
 
 #### Theorem (Schur Product Theorem)
 
 > Let $X$ and $Y$ be PSD matrices, then the Hadamard product, $X \cdot Y$ is also PSD.
 
-How can we go about proving this? The difficulty is that the Hadamard product seems to depend a lot on the basis of the underlying vector space, whereas the eigenvalues of a matrix are naturally basis independent. What we might try to do is to relate the basis dependent $X \cdot Y$ with a naturally basis invariant thing.
+How can we go about proving this? The difficulty is that the Hadamard product seems to depend a lot on the basis of the underlying vector space, whereas the eigenvalues of a matrix are naturally basis independent. What we might try to do is to relate the basis dependent $X \cdot Y$ with a naturally basis independent thing.
 
 To do this, we will need the notion of a [tensor product](https://en.wikipedia.org/wiki/Tensor_product). There are actually two related notions here: the tensor product of vector spaces, and of matrices. The tensor product of vector spaces $V$ and $W$ is the vector space spanned by simple tensors of the form $v \otimes w$, where $v \in V$ and $w \in W$, together with some natural relations that make the tensor product behave like the usual product.
 
-The tensor product of matrices $X$ and $Y$, $X \otimes Y$, is given as follows: it is an $n^2 \times n^2$ matrix where, for a tensor product vector $v \otimes w$, $(X \otimes Y)(v\otimes w) = (Xv)\otimes(Yw)$. If $v$ is a vector satisfying $Xv = \lambda v$, and $w$ is a vector satisfying $Yw = \mu w$, then $v \otimes w$ satisfies $(X\otimes Y)(v \otimes w) = \lambda\mu v\otimes w$. So, we can see that the eigenvalues of $X \otimes Y$ are all of the form $\lambda \mu$, where $\lambda$ and $\mu$ are eigenvalues of $X$ and $Y$ respectively.
+The tensor product of matrices $X$ and $Y$, $X \otimes Y$, is given as follows: it is an $n^2 \times n^2$ matrix where, for a tensor product vector $v \otimes w$, $(X \otimes Y)(v\otimes w) = (Xv)\otimes(Yw)$.
+
+If $v$ is a vector satisfying $Xv = \lambda v$, and $w$ is a vector satisfying $Yw = \mu w$, then $v \otimes w$ satisfies $(X\otimes Y)(v \otimes w) = \lambda\mu v\otimes w$. So, we can see that the eigenvalues of $X \otimes Y$ are all of the form $\lambda \mu$, where $\lambda$ and $\mu$ are eigenvalues of $X$ and $Y$ respectively.
 
 In particular, it is easy to see that if $X$ and $Y$ are PSD, then $X \otimes Y$ is also PSD. This proof was relatively straightforward, since the object that we are looking at $X \otimes Y$ is basis invariant.
 
@@ -56,7 +57,7 @@ $$
 
 # Schur Complements
 
-I have heard it said that the difference between a pure mathematician and an applied mathematician is that an applied mathematician knows what a Schur complement is (and likes it). When I was an undergrad studying mathematics, I had briefly heard of a Schur complement, and dismissed it as an ugly trick. Now, I suppose I have turned over a new leaf.
+I have heard it said that the difference between a pure mathematician and an applied mathematician is that an applied mathematician knows what a Schur complement is (and likes it). When I was an undergrad studying mathematics, I had vaguely heard of a Schur complement, and dismissed it as an ugly trick. Now, I suppose I have turned over a new leaf.
 
 Let $X$ be an $n\times n $matrix, and let $T \subseteq [n]$ index a subset of the columns of $X$. Also, 
 assume that $X_{T,T}$ is invertible. Then
@@ -65,10 +66,9 @@ $$
 $$
 Here, $X_{S,T}$ is the submatrix of $X$ whose columns are indexed by $S$ and whose rows are indexed by $T$.
 
-
 One nice thing about Schur complements is that they interact nicely with other Schur complements, and also the operations of taking submatrices.
 
-Precisely, let $S, U$ be disjoint from $T$, then
+Precisely, let $S$ and $U$ be disjoint from $T$, then
 $$
     (X \setminus S)\setminus T = X\setminus (S \cup T),
 $$
@@ -93,7 +93,7 @@ We should expect that the following theorem hold then:
 #### Theorem (Schur Complement Theorem)
 > Let $X$ be a PSD matrix, then $X \setminus T$ is PSD for any $T \subseteq [n]$.
 
-This is often stated as a consequence of a more general fact, known as Haynesworth inertia additivity, named after [Emilie Virginia Haynsworth](https://en.wikipedia.org/wiki/Emilie_Virginia_Haynsworth), who I think should be a better known mathematician.
+This is often stated as a consequence of a more powerful fact, known as Haynesworth inertia additivity, named after [Emilie Virginia Haynsworth](https://en.wikipedia.org/wiki/Emilie_Virginia_Haynsworth), who I think should be a better known mathematician.
 Let's give a proof more in line with our previous proof.
 
 To do this, we will make use an object called the [exterior power](https://en.wikipedia.org/wiki/Exterior_algebra) of a vector space, which is related to the tensor product, but slightly more complicated.
@@ -117,7 +117,7 @@ $$
     - v_1 \wedge v_2 \dots \wedge v_{i+1} \wedge v_{i} \dots \wedge v_k
 $$
 
-These two properties make the exterior power related to the determinant of a matrix. Indeed, we can define the wedge power of a matrix in a similar way to the tensor power:
+These two properties make the exterior power related to the determinant of a matrix. To see this, we can define the wedge power of a matrix in a similar way to the tensor power:
 $$
     (\Land^{(k)}X)(v_1 \wedge v_2 \dots \wedge v_k) = 
     Xv_1 \wedge Xv_2 \dots \wedge Xv_k.
@@ -164,11 +164,11 @@ Now, we can connect this back to Schur complements: let $k = |T| + 1$, consider 
 $$
     (X \setminus T)_{j,k} = \frac{1}{\det(X_{T,T})}\det(X_{T+j,T+k}) = \frac{1}{\det(X_{T,T})} (\Land^{(k)} X)_{T+i, T+k}.
 $$
-Thus, we have discovered $(X \setminus T)$ as a principal submatrix of $\Land^{(k)} X$, and so is PSD.
+Thus, we have discovered $(X \setminus T)$ as a principal submatrix of $\frac{1}{\det(X_{T,T})}\Land^{(k)} X$, and so is PSD.
 
-In fact, we have a slightly stronger fact, let $v$ be the $\binom{n}{|T|+1}$-length vector whose entries are all of the ways of taking products of $|T|+1$ eigenvalues of $X$, in sorted order, then
+In fact, we have a slightly stronger fact, let $v$ be the $\binom{n}{|T|+1}$-length vector whose entries are all of the ways of taking products of $|T|+1$ eigenvalues of $X$, in sorted order, then by Cauchy interlacing,
 $$
-    v_i \le \lambda_i(X\setminus T) \le v_{i + \binom{n}{|T|+1} - n+|T|}.
+   \frac{1}{\det(X_{T,T})}v_i \le \lambda_i(X\setminus T) \le \frac{1}{\det(X_{T,T})}v_{i + \binom{n}{|T|+1} - n+|T|}.
 $$
 
 I wonder if this inequality is tight?
