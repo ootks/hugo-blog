@@ -178,6 +178,6 @@ Note that Cauchy interlacing in this case also implies that $\frac{\prod_{j=1}^{
 
 The upper bound from the Cauchy interlacing inequality is not very useful here, since it is obvious from the definition that 
 \begin{equation*}
-    \lambda_i(X\setminus T) \le \lambda_i(X), 
+    \lambda_i(X\setminus T) \le \lambda_{i+|T|+1}(X), 
 \end{equation*}
 which is already smaller than the upper bound given by the Cauchy interlacing inequality.
