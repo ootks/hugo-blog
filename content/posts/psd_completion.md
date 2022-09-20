@@ -5,7 +5,7 @@ tags = ["math"]
 categories = []
 draft = false
 +++
-They say that in Euclidean geometry, the solutions to all problems start by drawing a line somewhere in the picture. I think that this is characteristic of my favorite kind of proof, where you can't just move forward in a linear fashion to get to an answer, but you actually have to add something new, that you might not have thought was related to the old proof.
+They say that in Euclidean geometry, the solutions to all problems start by drawing a line somewhere in the picture. I think that this is characteristic of my favorite kind of proof, where you can't just move forward in a linear fashion to get to an answer, but you actually have to add something new, that you might not have thought was related to the question.
 
 Here are two proofs that I only recently thought of as being related to each other. They are both about proving that a certain matrix is positive semidefinite (PSD), meaning that they have nonnegative eigenvalues, and we will prove them by finding that matrix inside a much larger PSD matrix.
 
