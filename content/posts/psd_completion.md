@@ -51,8 +51,9 @@ That is, the entries of $X \otimes Y$ in this basis are really just pairwise pro
 That is, if you delete all of the rows and columns of $X\otimes Y$ that are indexed by basis elements of the form $e_i \otimes e_j$ for $i \neq j$, then you get $X \cdot Y$. So, $X \cdot Y$ is actually a principal submatrix of $X \otimes Y$!
 
 In particular, since $X \otimes Y$ is 'obviously PSD', that means that $X \cdot Y$ is PSD! We can even get bounds on the eigenvalues of $X \cdot Y$ in terms of the eigenvalues of $X$ and $Y$. Let $v(X,Y)$ denote the $n^2$ long vector that you get from taking all of the pairwise products of eigenvalues of $X$ and $Y$, and sorting them from smallest to largest. Then, by Cauchy interlacing,
+
 \begin{equation*}
-    v(X,Y)_i \le \lambda_i(X \cdot Y) \le v(X,Y)_{i + n^2 - n}.
+    v(X,Y)_i \le \lambda\_i(X \cdot Y) \le v(X,Y)\_\{i + n^2 - n\}.
 \end{equation*}
 
 # Schur Complements
@@ -84,8 +85,9 @@ We also have the determinant formula for Schur complements, which we will use wi
 > $\det(X) = \det(X_{T,T})\det(X \setminus T)$.
 
 Using the above properties, it can be seen that the entries of the Schur complement satisfy
+
 \begin{equation*}
-    (X \setminus T)_{i,j} = \frac{1}{\det(X_{T,T})}\det(X_{T+i, T+j}).
+    (X \setminus T)\_{i,j} = \frac{1}{\det(X_{T,T})}\det(X_{T+i, T+j}).
 \end{equation*}
 
 We should expect that the following theorem hold then:
@@ -113,8 +115,7 @@ This exterior power also satisfies two relations:
 
 * **Alternativity** For any $i \in [k]$,
 \begin{equation*}
-    v_1 \wedge v_2 \dots \wedge v_i \wedge v_{i+1} \dots \wedge v_k = 
-    - v_1 \wedge v_2 \dots \wedge v_{i+1} \wedge v_{i} \dots \wedge v_k
+    v_1 \wedge v_2 \dots \wedge v_i \wedge v_{i+1} \dots \wedge v_k = - v_1 \wedge v_2 \dots \wedge v_{i+1} \wedge v_{i} \dots \wedge v_k
 \end{equation*}
 
 These two properties make the exterior power related to the determinant of a matrix. To see this, we can define the wedge power of a matrix in a similar way to the tensor power:
@@ -138,11 +139,11 @@ $\bigwedge^{(k)} V$ is an $\binom{n}{k}$ dimensional vector space with $\{e_S\}$
 There is also a natural inner product on wedge powers given by
 \begin{equation*}
     \langle v_1 \wedge v_2 \dots \wedge v_k, w_1 \wedge w_2 \dots \wedge w_k \rangle = 
-    \det \begin{pmatrix} \langle v_1, w_1 \rangle & \langle v_1, w_2 \rangle & \dots & \langle v_1, w_k\rangle\\
-    \langle v_2, w_1 \rangle & \langle v_2, w_2 \rangle & \dots & \langle v_2, w_k\rangle\\
-    &&\dots&\\
+    \det \begin{bmatrix} \langle v_1, w_1 \rangle & \langle v_1, w_2 \rangle & \dots & \langle v_1, w_k\rangle\\\\
+    \langle v_2, w_1 \rangle & \langle v_2, w_2 \rangle & \dots & \langle v_2, w_k\rangle\\\\
+    &&\dots&\\\\
     \langle v_k, w_1 \rangle & \langle v_k, w_2 \rangle & \dots & \langle v_k, w_k\rangle
-    \end{pmatrix}.
+    \end{bmatrix}.
 \end{equation*}
 The fact that this is an inner product is implied by the [Cauchy-Binet Theorem](https://en.wikipedia.org/wiki/Cauchy%E2%80%93Binet_formula).
 
@@ -161,8 +162,9 @@ On the other hand, we can look at the entries of $\bigwedge^{(k)}X$ as follows: 
 \end{equation*}
 
 Now, we can connect this back to Schur complements: let $k = |T| + 1$, consider the submatrix of $\wedge^{(k)}X$ indexed by basis vectors of the form $e_{t_1} \wedge e_{t_2} \wedge e_{t_{k-1}} \wedge e_{j}$, for some $j \not \in T$, then then from our earlier properties,
+
 \begin{equation*}
-    (X \setminus T)_{j,k} = \frac{1}{\det(X_{T,T})}\det(X_{T+j,T+k}) = \frac{1}{\det(X_{T,T})} (\bigwedge^{(k)} X)_{T+i, T+k}.
+    (X \setminus T)\_{j,k} = \frac{1}{\det(X\_{T,T})}\det(X\_{T+j,T+k}) = \frac{1}{\det(X\_{T,T})} (\bigwedge^{(k)} X)\_{T+i, T+k}.
 \end{equation*}
 Thus, we have discovered $(X \setminus T)$ as a principal submatrix of $\frac{1}{\det(X_{T,T})}\bigwedge^{(k)} X$, and so is PSD.
 
